@@ -1,0 +1,18 @@
+Removed Pin From Net: NetName=GND Pin=J1-1
+Removed Pin From Net: NetName=NetF1_2 Pin=J1-6
+Removed Pin From Net: NetName=GND Pin=J2-1
+Removed Pin From Net: NetName=NetF1_2 Pin=J2-6
+Removed Member From Class: ClassName=Power_board_schmatics Member=J1
+Removed Member From Class: ClassName=Power_board_schmatics Member=J2
+Removed Member From Class: ClassName=Power_board_schmatics Member=R8
+Change Component Footprint: Designator=P3 Old Footprint=PIN_HEADER_M_1x3 New Footprint=XT-60
+Change Component Comment : Designator=P3 Old Comment=1x3_M New Comment=XT-60
+Change component parameters: Designator = "P3"; Footprint = "XT-60"; UniqueID = "\HTKMASHP"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetF1_2 Pin=P3-1
+Added Pin To Net: NetName=GND Pin=P3-2
+Change Class Name : Old Net Name=Power_board_schmatics New Net Name=front_distribution_board
+Change Room Name: Old Name=Power_board_schmatics New Name=front_distribution_board
+Change Room Scope: Old Scope=InComponentClass('Power_board_schmatics') New Scope=InComponentClass('front_distribution_board')
