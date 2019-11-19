@@ -1,0 +1,14 @@
+Added Component: Designator=P4(XT-60)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=P5(XT-60)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_1 Pin=P4-1
+Added Pin To Net: NetName=GND Pin=P4-2
+Added Pin To Net: NetName=NetC2_1 Pin=P5-1
+Added Pin To Net: NetName=GND Pin=P5-2
+Added Member To Class: ClassName=Power_board_schmatics Member=Component P4 XT-60
+Added Member To Class: ClassName=Power_board_schmatics Member=Component P5 XT-60
