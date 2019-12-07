@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=NetC2_1 Pin=DCDC1-7
+Removed Pin From Net: NetName=NetC2_1 Pin=DCDC2-7
+Change Component Footprint: Designator=C4 Old Footprint=C_SMD_0805_PCB New Footprint=C_EL_SMT_Ø6.3
+Change Component Footprint: Designator=C9 Old Footprint=C_SMD_0805_PCB New Footprint=C_EL_SMT_Ø6.3
+Change Component Comment : Designator=C4 Old Comment=SMD New Comment=C_EL_SMT_Ø6.3
+Change Component Comment : Designator=C9 Old Comment=SMD New Comment=C_EL_SMT_Ø6.3

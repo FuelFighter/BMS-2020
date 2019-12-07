@@ -1,0 +1,5 @@
+Change Component Designator: OldDesignator=F1 NewDesignator=F2
+Change Component Designator: OldDesignator=F2 NewDesignator=F1
+Change Net Name : Old Net Name=NetF1_1 New Net Name=NetF2_1
+Change Net Name : Old Net Name=NetF2_1 New Net Name=NetF1_1
+Added Member To Class: ClassName=Power_board_schmatics Member=Component F2 Fuse-holder-3A

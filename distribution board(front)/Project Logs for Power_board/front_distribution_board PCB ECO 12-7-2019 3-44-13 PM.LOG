@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=NetC2_1 Pin=C2-1
+Removed Pin From Net: NetName=GND Pin=C2-2
+Removed Pin From Net: NetName=NetC2_1 Pin=C7-1
+Removed Pin From Net: NetName=GND Pin=C7-2
+Change Component Footprint: Designator=C2 Old Footprint=C_SMD_0805_PCB New Footprint=C_EL_SMT_Ø6.3
+Change Component Footprint: Designator=C7 Old Footprint=C_SMD_0805_pcb New Footprint=C_EL_SMT_Ø6.3
+Change Component Comment : Designator=C2 Old Comment=SMD New Comment=C_EL_SMT_Ø6.3
+Change Component Comment : Designator=C7 Old Comment=SMD New Comment=C_EL_SMT_Ø6.3
+Added Pin To Net: NetName=GND Pin=C2-1
+Added Pin To Net: NetName=NetC2_1 Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C7-1
+Added Pin To Net: NetName=NetC2_1 Pin=C7-2
+Change Net Name : Old Net Name=NetC2_1 New Net Name=NetC2_2
