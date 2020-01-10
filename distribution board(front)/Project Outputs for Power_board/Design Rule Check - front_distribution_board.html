@@ -1,0 +1,613 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD19\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10.01.2020</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">18.35.36</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:00</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc" class="file"><acronym title="C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc">C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">2</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">81</td></tr>
+</table>
+</td>
+</table><a name="IDPUCXWW4H55RODD52TTMHWQ5DJDJXSPDLO0RXHSHR1EQRFKV5SPYF"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBUDEKE2ZBNU2H03BW3I0FIBLXIGSYYG5E3USIKDXOKWEZLN5VNMG">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</a></td>
+<td class="column2">2</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">2</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDJPDT5H4RYEBJDGVIHWHPLYXKYHXTTX10M130FUEFZQN1VCRJ02K">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDYAYTBUCRFKPSOSXNJTHNEO2HUJ41XEEKQARUCIBRIAIDOVEYDPYL">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID53A5P2F1C5Q0FLNZM3G1KSUCAFJY4U0ZVXJVZ0ISDHNUBY0ZBHSJ">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDDGMCSEFDYK51BMR1J5VE5PIIEGMWWPWRKBWW21OF1TBF1V305ZIM">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID0AHDU04TCYYTG5SLKZANLC5KZHJMF2IP5JKBJGJCIISJ4BMGQV3M">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">36</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDFGW3HSQRCHJJCZM0WXAF44H3PPHPFIC5XPSSWALPJPWQ0LQC0NGP">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHREV2LDFUIDSHQVKEVAF3WGEYFULEM3JQQR5RYHEUFDYZIXIW2O">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">6</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSWAGUU0EGGQ5KRXOBBOR1IQADIT2XRUIYQ4HHSPYYPWFHEFVHEVG">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDKEJ14WUCYIX1BMAZFILKD5OTCCJ1LPMA4IE1B4RPM2XCLCF0BD">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDIKMJVXHTZQFXDMYS0DMOVOPOHET2XWIBM2DR2NEB10XMHFKLVPYK">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">26</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHSOGR5OJR4P5GFKUYC3SG4LFYNYBJOQJ3BMDQROVB5ENPFFM4BTC">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDKYMK0U5CX4MVLEJKMEGSTPOBDOUE3MDI0GKE5RIDUGE3MBQNDT4">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID5XZI211LAOYVCWTVD0C3ZXCOSI5CJVWJB24AIXPTQ0IAZGJJ31M">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">81</td>
+</tr>
+</table><br><a name="IDMWPBUFUQWHNNH3QYPV02OSVVMF2NGPUKRTSGLYGYAP4UKNSR153N"><h2>Warnings</h2></a><a name="IDBUDEKE2ZBNU2H03BW3I0FIBLXIGSYYG5E3USIKDXOKWEZLN5VNMG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Design contains shelved or modified (but not repoured) polygons. The result of DRC is not correct. Recommended to restore/repour all polygons and proceed with DRC again</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1">Polygon named: Top Layer-GND</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1">Polygon named: Bottom Layer-GND</td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDJPDT5H4RYEBJDGVIHWHPLYXKYHXTTX10M130FUEFZQN1VCRJ02K"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5948.135mil|Location2.X=5955.802mil|Location1.Y=2301.442mil|Location2.Y=2309.109mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5948.135mil|Location2.X=5955.802mil|Location1.Y=2301.442mil|Location2.Y=2309.109mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad DCDC1-7(151.73mm,58.554mm) on Top Layer And Track (146.33mm,58.554mm)(155.314mm,58.554mm) on Top Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4302.112mil|Location2.X=4309.778mil|Location1.Y=2401.167mil|Location2.Y=2408.833mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4302.112mil|Location2.X=4309.778mil|Location1.Y=2401.167mil|Location2.Y=2408.833mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.254mm) Between Pad DCDC2-7(109.921mm,61.087mm) on Top Layer And Track (104.521mm,61.087mm)(112.141mm,61.087mm) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDYAYTBUCRFKPSOSXNJTHNEO2HUJ41XEEKQARUCIBRIAIDOVEYDPYL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5948.337mil|Location2.X=5998.908mil|Location1.Y=2279.99mil|Location2.Y=2330.561mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5948.337mil|Location2.X=5998.908mil|Location1.Y=2279.99mil|Location2.Y=2330.561mil|Absolute=True">Short-Circuit Constraint: Between Pad DCDC1-7(151.73mm,58.554mm) on Top Layer And Track (146.33mm,58.554mm)(155.314mm,58.554mm) on Top Layer Location : [X = 151.73mm][Y = 58.554mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4302.313mil|Location2.X=4352.884mil|Location1.Y=2379.715mil|Location2.Y=2430.285mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4302.313mil|Location2.X=4352.884mil|Location1.Y=2379.715mil|Location2.Y=2430.285mil|Absolute=True">Short-Circuit Constraint: Between Pad DCDC2-7(109.921mm,61.087mm) on Top Layer And Track (104.521mm,61.087mm)(112.141mm,61.087mm) on Top Layer Location : [X = 109.921mm][Y = 61.087mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID53A5P2F1C5Q0FLNZM3G1KSUCAFJY4U0ZVXJVZ0ISDHNUBY0ZBHSJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.472mil|Location2.X=3143.528mil|Location1.Y=1513.165mil|Location2.Y=1713.685mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.472mil|Location2.X=3143.528mil|Location1.Y=1513.165mil|Location2.Y=1713.685mil|Absolute=True">Un-Routed Net Constraint: Net NetF1_1 Between Pad F1-1(78.994mm,39.036mm) on Multi-Layer And Pad F1-1(78.994mm,42.926mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.472mil|Location2.X=3143.528mil|Location1.Y=2123.008mil|Location2.Y=2322.346mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3076.472mil|Location2.X=3143.528mil|Location1.Y=2123.008mil|Location2.Y=2322.346mil|Absolute=True">Un-Routed Net Constraint: Net NetC8_2 Between Pad F1-2(78.994mm,54.526mm) on Multi-Layer And Pad F1-2(78.994mm,58.386mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4946.472mil|Location2.X=5013.528mil|Location1.Y=1196.473mil|Location2.Y=1396.992mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4946.472mil|Location2.X=5013.528mil|Location1.Y=1196.473mil|Location2.Y=1396.992mil|Absolute=True">Un-Routed Net Constraint: Net NetF2_1 Between Pad F2-1(126.492mm,30.992mm) on Multi-Layer And Pad F2-1(126.492mm,34.882mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4946.472mil|Location2.X=5013.528mil|Location1.Y=1806.315mil|Location2.Y=2005.653mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4946.472mil|Location2.X=5013.528mil|Location1.Y=1806.315mil|Location2.Y=2005.653mil|Absolute=True">Un-Routed Net Constraint: Net NetC3_2 Between Pad F2-2(126.492mm,46.482mm) on Multi-Layer And Pad F2-2(126.492mm,50.342mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDDGMCSEFDYK51BMR1J5VE5PIIEGMWWPWRKBWW21OF1TBF1V305ZIM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Modified Polygon (Allow modified: No), (Allow shelved: No)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=6610mil|Location1.Y=1010mil|Location2.Y=3320mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=6610mil|Location1.Y=1010mil|Location2.Y=3320mil|Absolute=True">Modified Polygon: Polygon Not Repour After Edit  (Bottom Layer-GND) on Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=6610mil|Location1.Y=1015mil|Location2.Y=3320mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=6610mil|Location1.Y=1015mil|Location2.Y=3320mil|Absolute=True">Modified Polygon: Polygon Not Repour After Edit  (Top Layer-GND) on Top Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID0AHDU04TCYYTG5SLKZANLC5KZHJMF2IP5JKBJGJCIISJ4BMGQV3M"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.5mil|Location2.X=4004.919mil|Location1.Y=2173.5mil|Location2.Y=2200.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3963.5mil|Location2.X=4004.919mil|Location1.Y=2173.5mil|Location2.Y=2200.133mil|Absolute=True">Width Constraint: Track (100.584mm,55.118mm)(101.346mm,55.88mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3972.29mil|Location2.X=4007.45mil|Location1.Y=2238.5mil|Location2.Y=2270.19mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3972.29mil|Location2.X=4007.45mil|Location1.Y=2238.5mil|Location2.Y=2270.19mil|Absolute=True">Width Constraint: Track (101.346mm,55.88mm)(101.346mm,58.42mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4006mil|Location2.X=4047.419mil|Location1.Y=2316mil|Location2.Y=2342.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4006mil|Location2.X=4047.419mil|Location1.Y=2316mil|Location2.Y=2342.633mil|Absolute=True">Width Constraint: Track (101.346mm,58.42mm)(102.743mm,59.817mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4068.5mil|Location2.X=4115.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4068.5mil|Location2.X=4115.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True">Width Constraint: Track (102.743mm,59.817mm)(104.521mm,59.817mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.237mil|Location2.X=4333.18mil|Location1.Y=1338.658mil|Location2.Y=1361.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4287.237mil|Location2.X=4333.18mil|Location1.Y=1338.658mil|Location2.Y=1361.342mil|Absolute=True">Width Constraint: Track (103.306mm,34.29mm)(115.062mm,34.29mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4253.5mil|Location2.X=4300.16mil|Location1.Y=2393.5mil|Location2.Y=2416.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4253.5mil|Location2.X=4300.16mil|Location1.Y=2393.5mil|Location2.Y=2416.5mil|Absolute=True">Width Constraint: Track (104.521mm,61.087mm)(112.141mm,61.087mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4441mil|Location2.X=4482.419mil|Location1.Y=2431mil|Location2.Y=2457.633mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4441mil|Location2.X=4482.419mil|Location1.Y=2431mil|Location2.Y=2457.633mil|Absolute=True">Width Constraint: Track (112.141mm,61.087mm)(114.046mm,62.992mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4628.5mil|Location2.X=4675.16mil|Location1.Y=2468.5mil|Location2.Y=2491.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4628.5mil|Location2.X=4675.16mil|Location1.Y=2468.5mil|Location2.Y=2491.5mil|Absolute=True">Width Constraint: Track (114.046mm,62.992mm)(121.666mm,62.992mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.579mil|Location2.X=4624.541mil|Location1.Y=1270.368mil|Location2.Y=1296.421mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4583.579mil|Location2.X=4624.541mil|Location1.Y=1270.368mil|Location2.Y=1296.421mil|Absolute=True">Width Constraint: Track (115.062mm,34.29mm)(118.36mm,30.992mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4808.579mil|Location2.X=4854.521mil|Location1.Y=1208.815mil|Location2.Y=1231.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4808.579mil|Location2.X=4854.521mil|Location1.Y=1208.815mil|Location2.Y=1231.5mil|Absolute=True">Width Constraint: Track (118.36mm,30.992mm)(126.492mm,30.992mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5003.658mil|Location2.X=5049.6mil|Location1.Y=2468.657mil|Location2.Y=2491.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5003.658mil|Location2.X=5049.6mil|Location1.Y=2468.657mil|Location2.Y=2491.343mil|Absolute=True">Width Constraint: Track (121.666mm,62.992mm)(133.096mm,62.992mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4962.577mil|Location2.X=4997.177mil|Location1.Y=2099.642mil|Location2.Y=2130.849mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4962.577mil|Location2.X=4997.177mil|Location1.Y=2099.642mil|Location2.Y=2130.849mil|Absolute=True">Width Constraint: Track (126.492mm,50.342mm)(126.492mm,56.896mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4978.658mil|Location2.X=5019.446mil|Location1.Y=2238.657mil|Location2.Y=2264.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4978.658mil|Location2.X=5019.446mil|Location1.Y=2238.657mil|Location2.Y=2264.885mil|Absolute=True">Width Constraint: Track (126.492mm,56.896mm)(127mm,57.404mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.421mil|Location2.X=5134.364mil|Location1.Y=2248.657mil|Location2.Y=2271.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5088.421mil|Location2.X=5134.364mil|Location1.Y=2248.657mil|Location2.Y=2271.343mil|Absolute=True">Width Constraint: Track (127mm,57.404mm)(132.068mm,57.404mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5198.028mil|Location2.X=5244.688mil|Location1.Y=2248.5mil|Location2.Y=2271.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5198.028mil|Location2.X=5244.688mil|Location1.Y=2248.5mil|Location2.Y=2271.5mil|Absolute=True">Width Constraint: Track (132.068mm,57.404mm)(132.576mm,57.404mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5278.658mil|Location2.X=5319.446mil|Location1.Y=2518.657mil|Location2.Y=2544.885mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5278.658mil|Location2.X=5319.446mil|Location1.Y=2518.657mil|Location2.Y=2544.885mil|Absolute=True">Width Constraint: Track (133.096mm,62.992mm)(135.636mm,65.532mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.577mil|Location2.X=5357.177mil|Location1.Y=2683.657mil|Location2.Y=2714.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5322.577mil|Location2.X=5357.177mil|Location1.Y=2683.657mil|Location2.Y=2714.865mil|Absolute=True">Width Constraint: Track (135.636mm,65.532mm)(135.636mm,71.374mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5718.933mil|Location2.X=5764.876mil|Location1.Y=2798.657mil|Location2.Y=2821.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5718.933mil|Location2.X=5764.876mil|Location1.Y=2798.657mil|Location2.Y=2821.343mil|Absolute=True">Width Constraint: Track (135.636mm,71.374mm)(155.462mm,71.374mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5548.461mil|Location2.X=5595.121mil|Location1.Y=2243.776mil|Location2.Y=2266.776mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5548.461mil|Location2.X=5595.121mil|Location1.Y=2243.776mil|Location2.Y=2266.776mil|Absolute=True">Width Constraint: Track (137.788mm,57.284mm)(144.658mm,57.284mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.862mil|Location2.X=5756.805mil|Location1.Y=2243.933mil|Location2.Y=2266.618mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5710.862mil|Location2.X=5756.805mil|Location1.Y=2243.933mil|Location2.Y=2266.618mil|Absolute=True">Width Constraint: Track (144.658mm,57.284mm)(146.03mm,57.284mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5926.374mil|Location2.X=5973.034mil|Location1.Y=2293.776mil|Location2.Y=2316.776mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5926.374mil|Location2.X=5973.034mil|Location1.Y=2293.776mil|Location2.Y=2316.776mil|Absolute=True">Width Constraint: Track (146.33mm,58.554mm)(155.314mm,58.554mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.02mil|Location2.X=6271.808mil|Location1.Y=2421.571mil|Location2.Y=2447.798mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6231.02mil|Location2.X=6271.808mil|Location1.Y=2421.571mil|Location2.Y=2447.798mil|Absolute=True">Width Constraint: Track (155.314mm,58.554mm)(161.798mm,65.038mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6233.933mil|Location2.X=6274.895mil|Location1.Y=2670.565mil|Location2.Y=2696.618mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6233.933mil|Location2.X=6274.895mil|Location1.Y=2670.565mil|Location2.Y=2696.618mil|Absolute=True">Width Constraint: Track (155.462mm,71.374mm)(161.798mm,65.038mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.577mil|Location2.X=6387.177mil|Location1.Y=2658.933mil|Location2.Y=2690.141mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.577mil|Location2.X=6387.177mil|Location1.Y=2658.933mil|Location2.Y=2690.141mil|Absolute=True">Width Constraint: Track (161.798mm,65.038mm)(161.798mm,70.612mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2818.657mil|Location2.X=2864.6mil|Location1.Y=1678.658mil|Location2.Y=1701.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2818.657mil|Location2.X=2864.6mil|Location1.Y=1678.658mil|Location2.Y=1701.342mil|Absolute=True">Width Constraint: Track (64.77mm,42.926mm)(78.994mm,42.926mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3186.492mil|Location2.X=3232.435mil|Location1.Y=2293.657mil|Location2.Y=2316.343mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3186.492mil|Location2.X=3232.435mil|Location1.Y=2293.657mil|Location2.Y=2316.343mil|Absolute=True">Width Constraint: Track (79.155mm,58.547mm)(83.295mm,58.547mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.665mil|Location2.X=3382.325mil|Location1.Y=2293.5mil|Location2.Y=2316.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3335.665mil|Location2.X=3382.325mil|Location1.Y=2293.5mil|Location2.Y=2316.5mil|Absolute=True">Width Constraint: Track (83.295mm,58.547mm)(86.741mm,58.547mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3471mil|Location2.X=3512.603mil|Location1.Y=2222.551mil|Location2.Y=2249mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3471mil|Location2.X=3512.603mil|Location1.Y=2222.551mil|Location2.Y=2249mil|Absolute=True">Width Constraint: Track (86.741mm,58.547mm)(90.17mm,55.118mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3598.264mil|Location2.X=3644.924mil|Location1.Y=2158.5mil|Location2.Y=2181.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3598.264mil|Location2.X=3644.924mil|Location1.Y=2158.5mil|Location2.Y=2181.5mil|Absolute=True">Width Constraint: Track (90.17mm,55.118mm)(93.206mm,55.118mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3662.577mil|Location2.X=3697.177mil|Location1.Y=2618.657mil|Location2.Y=2649.865mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3662.577mil|Location2.X=3697.177mil|Location1.Y=2618.657mil|Location2.Y=2649.865mil|Absolute=True">Width Constraint: Track (93.472mm,61.976mm)(93.472mm,71.628mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.157mil|Location2.X=3752.12mil|Location1.Y=2382.789mil|Location2.Y=2408.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3711.157mil|Location2.X=3752.12mil|Location1.Y=2382.789mil|Location2.Y=2408.843mil|Absolute=True">Width Constraint: Track (93.472mm,61.976mm)(95.631mm,59.817mm) on Top Layer Actual Width = 0.5mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3833.5mil|Location2.X=3880.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3833.5mil|Location2.X=3880.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True">Width Constraint: Track (95.631mm,59.817mm)(99.695mm,59.817mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3913.5mil|Location2.X=3960.16mil|Location1.Y=2158.5mil|Location2.Y=2181.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3913.5mil|Location2.X=3960.16mil|Location1.Y=2158.5mil|Location2.Y=2181.5mil|Absolute=True">Width Constraint: Track (98.806mm,55.118mm)(100.584mm,55.118mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3887.29mil|Location2.X=3922.45mil|Location1.Y=2380.291mil|Location2.Y=2411.981mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3887.29mil|Location2.X=3922.45mil|Location1.Y=2380.291mil|Location2.Y=2411.981mil|Absolute=True">Width Constraint: Track (99.187mm,60.325mm)(99.187mm,61.178mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.5mil|Location2.X=3945.103mil|Location1.Y=2350.051mil|Location2.Y=2376.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3903.5mil|Location2.X=3945.103mil|Location1.Y=2350.051mil|Location2.Y=2376.5mil|Absolute=True">Width Constraint: Track (99.187mm,60.325mm)(99.695mm,59.817mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3973.5mil|Location2.X=4020.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3973.5mil|Location2.X=4020.16mil|Location1.Y=2343.5mil|Location2.Y=2366.5mil|Absolute=True">Width Constraint: Track (99.695mm,59.817mm)(102.743mm,59.817mm) on Top Layer Actual Width = 0.508mm, Target Width = 0.254mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHREV2LDFUIDSHQVKEVAF3WGEYFULEM3JQQR5RYHEUFDYZIXIW2O"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5250.792mil|Location2.X=5429.208mil|Location1.Y=2720.792mil|Location2.Y=2899.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5250.792mil|Location2.X=5429.208mil|Location1.Y=2720.792mil|Location2.Y=2899.208mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P1-1(135.636mm,71.374mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5250.792mil|Location2.X=5429.208mil|Location1.Y=3004.257mil|Location2.Y=3182.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5250.792mil|Location2.X=5429.208mil|Location1.Y=3004.257mil|Location2.Y=3182.672mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P1-2(135.636mm,78.574mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2460.792mil|Location2.X=2639.208mil|Location1.Y=1600.792mil|Location2.Y=1779.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2460.792mil|Location2.X=2639.208mil|Location1.Y=1600.792mil|Location2.Y=1779.208mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P2-1(64.77mm,42.926mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2460.792mil|Location2.X=2639.208mil|Location1.Y=1884.257mil|Location2.Y=2062.672mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2460.792mil|Location2.X=2639.208mil|Location1.Y=1884.257mil|Location2.Y=2062.672mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P2-2(64.77mm,50.126mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3976.292mil|Location2.X=4154.708mil|Location1.Y=1259.133mil|Location2.Y=1437.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3976.292mil|Location2.X=4154.708mil|Location1.Y=1259.133mil|Location2.Y=1437.548mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P3-1(103.264mm,34.248mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.828mil|Location2.X=3871.243mil|Location1.Y=1259.133mil|Location2.Y=1437.548mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3692.828mil|Location2.X=3871.243mil|Location1.Y=1259.133mil|Location2.Y=1437.548mil|Absolute=True">Hole Size Constraint: (4.5mm &gt; 2.54mm) Pad P3-2(96.064mm,34.248mm) on Multi-Layer Actual Hole Size = 4.5mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIKMJVXHTZQFXDMYS0DMOVOPOHET2XWIBM2DR2NEB10XMHFKLVPYK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.387mil|Location2.X=6360.054mil|Location1.Y=3004.513mil|Location2.Y=3012.18mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6352.387mil|Location2.X=6360.054mil|Location1.Y=3004.513mil|Location2.Y=3012.18mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C2-1(161.798mm,75.712mm) on Top Layer And Track (158.498mm,76.412mm)(164.898mm,76.412mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6379.946mil|Location2.X=6387.613mil|Location1.Y=2748.608mil|Location2.Y=2756.274mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6379.946mil|Location2.X=6387.613mil|Location1.Y=2748.608mil|Location2.Y=2756.274mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C2-2(161.798mm,70.612mm) on Top Layer And Track (159.898mm,69.912mm)(163.398mm,69.912mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6433.726mil|Location2.X=6441.392mil|Location1.Y=1552.387mil|Location2.Y=1560.054mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6433.726mil|Location2.X=6441.392mil|Location1.Y=1552.387mil|Location2.Y=1560.054mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C4-1(162.814mm,39.878mm) on Top Layer And Track (163.514mm,36.778mm)(163.514mm,43.178mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6177.82mil|Location2.X=6185.487mil|Location1.Y=1579.946mil|Location2.Y=1587.613mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6177.82mil|Location2.X=6185.487mil|Location1.Y=1579.946mil|Location2.Y=1587.613mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C4-2(157.714mm,39.878mm) on Top Layer And Track (157.014mm,38.278mm)(157.014mm,41.778mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4412.387mil|Location2.X=4420.054mil|Location1.Y=3113.726mil|Location2.Y=3121.392mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4412.387mil|Location2.X=4420.054mil|Location1.Y=3113.726mil|Location2.Y=3121.392mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C7-1(112.522mm,78.486mm) on Top Layer And Track (109.222mm,79.186mm)(115.622mm,79.186mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4439.946mil|Location2.X=4447.613mil|Location1.Y=2857.82mil|Location2.Y=2865.487mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4439.946mil|Location2.X=4447.613mil|Location1.Y=2857.82mil|Location2.Y=2865.487mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C7-2(112.522mm,73.386mm) on Top Layer And Track (110.622mm,72.686mm)(114.122mm,72.686mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4713.726mil|Location2.X=4721.392mil|Location1.Y=1672.387mil|Location2.Y=1680.054mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4713.726mil|Location2.X=4721.392mil|Location1.Y=1672.387mil|Location2.Y=1680.054mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C9-1(119.126mm,42.926mm) on Top Layer And Track (119.826mm,39.826mm)(119.826mm,46.226mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4457.82mil|Location2.X=4465.487mil|Location1.Y=1699.946mil|Location2.Y=1707.613mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4457.82mil|Location2.X=4465.487mil|Location1.Y=1699.946mil|Location2.Y=1707.613mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C9-2(114.026mm,42.926mm) on Top Layer And Track (113.326mm,41.326mm)(113.326mm,44.826mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5526.144mil|Location2.X=5533.811mil|Location1.Y=1705.312mil|Location2.Y=1712.978mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5526.144mil|Location2.X=5533.811mil|Location1.Y=1705.312mil|Location2.Y=1712.978mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad D1-1(139.954mm,42.672mm) on Multi-Layer And Text "D1" (138.684mm,42.606mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2339.808mil|Location2.Y=2351.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2339.808mil|Location2.Y=2351.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-1(146.33mm,59.824mm) on Top Layer And Track (147.03mm,55.369mm)(147.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2289.808mil|Location2.Y=2301.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2289.808mil|Location2.Y=2301.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-2(146.33mm,58.554mm) on Top Layer And Track (147.03mm,55.369mm)(147.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2239.808mil|Location2.Y=2251.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2239.808mil|Location2.Y=2251.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-3(146.33mm,57.284mm) on Top Layer And Track (147.03mm,55.369mm)(147.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2189.808mil|Location2.Y=2201.058mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5779.021mil|Location2.X=5790.271mil|Location1.Y=2189.808mil|Location2.Y=2201.058mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-4(146.33mm,56.014mm) on Top Layer And Track (147.03mm,55.369mm)(147.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2209.493mil|Location2.Y=2220.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2209.493mil|Location2.Y=2220.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-5(151.73mm,56.014mm) on Top Layer And Track (151.03mm,55.369mm)(151.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2259.493mil|Location2.Y=2270.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2259.493mil|Location2.Y=2270.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-6(151.73mm,57.284mm) on Top Layer And Track (151.03mm,55.369mm)(151.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2309.493mil|Location2.Y=2320.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2309.493mil|Location2.Y=2320.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-7(151.73mm,58.554mm) on Top Layer And Track (151.03mm,55.369mm)(151.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2359.493mil|Location2.Y=2370.743mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5944.375mil|Location2.X=5955.625mil|Location1.Y=2359.493mil|Location2.Y=2370.743mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC1-8(151.73mm,59.824mm) on Top Layer And Track (151.03mm,55.369mm)(151.03mm,60.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2439.532mil|Location2.Y=2450.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2439.532mil|Location2.Y=2450.782mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-1(104.521mm,62.357mm) on Top Layer And Track (105.221mm,57.902mm)(105.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2389.532mil|Location2.Y=2400.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2389.532mil|Location2.Y=2400.782mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-2(104.521mm,61.087mm) on Top Layer And Track (105.221mm,57.902mm)(105.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2339.532mil|Location2.Y=2350.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2339.532mil|Location2.Y=2350.782mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-3(104.521mm,59.817mm) on Top Layer And Track (105.221mm,57.902mm)(105.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2289.532mil|Location2.Y=2300.782mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4132.997mil|Location2.X=4144.247mil|Location1.Y=2289.532mil|Location2.Y=2300.782mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-4(104.521mm,58.547mm) on Top Layer And Track (105.221mm,57.902mm)(105.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2309.218mil|Location2.Y=2320.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2309.218mil|Location2.Y=2320.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-5(109.921mm,58.547mm) on Top Layer And Track (109.221mm,57.902mm)(109.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2359.218mil|Location2.Y=2370.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2359.218mil|Location2.Y=2370.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-6(109.921mm,59.817mm) on Top Layer And Track (109.221mm,57.902mm)(109.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2409.218mil|Location2.Y=2420.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2409.218mil|Location2.Y=2420.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-7(109.921mm,61.087mm) on Top Layer And Track (109.221mm,57.902mm)(109.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2459.218mil|Location2.Y=2470.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4298.351mil|Location2.X=4309.601mil|Location1.Y=2459.218mil|Location2.Y=2470.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.1mm &lt; 0.254mm) Between Pad DCDC2-8(109.921mm,62.357mm) on Top Layer And Track (109.221mm,57.902mm)(109.221mm,63.002mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.1mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3105.989mil|Location2.X=3117.239mil|Location1.Y=1511.521mil|Location2.Y=1522.771mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3105.989mil|Location2.X=3117.239mil|Location1.Y=1511.521mil|Location2.Y=1522.771mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.001mm &lt; 0.254mm) Between Pad F1-1(78.994mm,39.036mm) on Multi-Layer And Text "F1" (79.035mm,38.408mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.001mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHSOGR5OJR4P5GFKUYC3SG4LFYNYBJOQJ3BMDQROVB5ENPFFM4BTC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4109.375mil|Location2.X=4120.625mil|Location1.Y=2496.424mil|Location2.Y=2507.674mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4109.375mil|Location2.X=4120.625mil|Location1.Y=2496.424mil|Location2.Y=2507.674mil|Absolute=True">Silk To Silk Clearance Constraint: (0.246mm &lt; 0.254mm) Between Arc (104.521mm,63.202mm) on Top Overlay And Text "DCDC2" (104.116mm,63.802mm) on Top Overlay Silk Text to Silk Clearance [0.246mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5755.399mil|Location2.X=5766.649mil|Location1.Y=2396.7mil|Location2.Y=2407.95mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5755.399mil|Location2.X=5766.649mil|Location1.Y=2396.7mil|Location2.Y=2407.95mil|Absolute=True">Silk To Silk Clearance Constraint: (0.246mm &lt; 0.254mm) Between Arc (146.33mm,60.669mm) on Top Overlay And Text "DCDC1" (145.925mm,61.269mm) on Top Overlay Silk Text to Silk Clearance [0.246mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5452.092mil|Location2.X=5459.758mil|Location1.Y=1673.584mil|Location2.Y=1681.251mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5452.092mil|Location2.X=5459.758mil|Location1.Y=1673.584mil|Location2.Y=1681.251mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.254mm) Between Text "D1" (138.684mm,42.606mm) on Top Overlay And Track (138.504mm,34.832mm)(138.504mm,45.432mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
