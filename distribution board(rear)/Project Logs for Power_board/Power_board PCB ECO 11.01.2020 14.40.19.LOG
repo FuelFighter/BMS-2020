@@ -1,0 +1,4 @@
+Change Physical Footprint: Designator=DCDC1 Old Footprint=ACT4070B_SMD New Footprint=ACT4070B_SMD
+Change Physical Footprint: Designator=DCDC2 Old Footprint=ACT4070B_SMD New Footprint=ACT4070B_SMD
+Change Physical Footprint: Designator=F1 Old Footprint=fuse_holder_3A New Footprint=fuse_holder_3A
+Change Physical Footprint: Designator=F2 Old Footprint=fuse_holder_3A New Footprint=fuse_holder_3A
