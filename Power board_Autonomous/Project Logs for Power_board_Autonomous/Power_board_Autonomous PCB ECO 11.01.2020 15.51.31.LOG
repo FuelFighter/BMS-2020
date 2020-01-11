@@ -1,0 +1,8 @@
+Change Component Description : Designator=DCDC1 Old Description=6v to 30v input range 
+3A output current
+up to 12v output New Description=6v to 30v input range 
+3A output current
+up to 12v output
+https://active-semi.com/wp-content/uploads/ACT4070B_Datasheet.pdf
+Change component parameters: Designator = "DCDC1"; Footprint = "ACT4070B_SMD"; UniqueID = "\YYTVHQFG"
+Change component parameters. Clean all parameters for all variants
