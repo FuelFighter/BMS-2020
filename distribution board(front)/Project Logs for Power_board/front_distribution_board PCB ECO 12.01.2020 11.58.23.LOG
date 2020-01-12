@@ -1,0 +1,18 @@
+Change Component Description : Designator=DCDC1 Old Description=6v to 30v input range 
+3A output current
+up to 12v output New Description=6v to 30v input range 
+3A output current
+up to 12v output
+https://active-semi.com/wp-content/uploads/ACT4070B_Datasheet.pdf
+Change Component Description : Designator=DCDC2 Old Description=6v to 30v input range 
+3A output current
+up to 12v output New Description=6v to 30v input range 
+3A output current
+up to 12v output
+https://active-semi.com/wp-content/uploads/ACT4070B_Datasheet.pdf
+Change component parameters: Designator = "DCDC1"; Footprint = "ACT4070B_SMD"; UniqueID = "\YYTVHQFG"
+Change component parameters. Clean all parameters for all variants
+Change component parameters: Designator = "DCDC2"; Footprint = "ACT4070B_SMD"; UniqueID = "\OBKMWFUE"
+Change component parameters. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=DCDC1-9
+Added Pin To Net: NetName=GND Pin=DCDC2-9
