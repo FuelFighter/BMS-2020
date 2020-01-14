@@ -1,0 +1,19 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Power_board_Autonomous.PcbDoc   14.01.2020  22.07.41
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : Power_board_Autonomous.TXT
+ASCII RectHoles File : Power_board_Autonomous-RectHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      28mil (0.711mm)                                           Round             15        PTH        0.00inch (0.00mm)
+T2      30mil (0.75mm)                                            Rectangle         8         PTH        0.00inch (0.00mm)
+T3      43mil (1.1mm)                                             Round             4         PTH        0.00inch (0.00mm)
+T4      157mil (4mm)                                              Round             4         PTH        0.00inch (0.00mm)
+T5      177mil (4.5mm)          +/-4mil (0.1mm)                   Round             6         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              37
+
+Total Processing Time (hh:mm:ss) : 00.00.00

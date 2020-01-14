@@ -1,0 +1,3 @@
+Layer Pairs Export File for PCB: C:\Users\Magnus\Documents\Fuel_Fighter_BMS\distribution board(front)\front_distribution_board.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=front_distribution_board.txt|DrillLayers=gtl,gbl
+LayersSetName=Top_Bot_Rect_Holes|DrillFile=front_distribution_board-rectholes.txt|DrillLayers=gtl,gbl

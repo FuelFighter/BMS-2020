@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Power_board_Autonomous.PrjPcb]
+   Generated File[Power_board_Autonomous.TXT]
+   Generated File[Power_board_Autonomous-RectHoles.TXT]
+   Generated File[Power_board_Autonomous.LDP]
+   Generated File[Power_board_Autonomous.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 22.07.41 On 14.01.2020
