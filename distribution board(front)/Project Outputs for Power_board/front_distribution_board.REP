@@ -2,132 +2,29 @@
 FileName = front_distribution_board.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Layer
-      File : front_distribution_board_Copper_Signal_Top.gbr
+Generating : Dielectric 1
+      File : front_distribution_board.1
 
-    Adding Layer      : Top Layer
+    Adding Layer      : Dielectric 1
 
-    Adding Layer      : Multi-Layer
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 3
+      File : front_distribution_board.GM3
+
+    Adding Layer      : Mechanical 3
 
 
 Used DCodes :
     D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : front_distribution_board_Copper_Signal_Bot.gbr
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D19
-    D21
-    D23
-    D24
-    D25
-    D26
-    D27
-    D28
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : front_distribution_board_Pads_Bot.gbr
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D23
-    D24
-    D25
-    D26
-    D27
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : front_distribution_board_Pads_Top.gbr
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-    D18
-    D23
-    D24
-    D25
-    D26
-    D27
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : front_distribution_board_Legend_Bot.gbr
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : front_distribution_board_Soldermask_Bot.gbr
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D29
-    D30
-    D31
-    D32
-    D33
-    D34
 *************************************************************
 
 *************************************************************
 Generating : Bottom Paste
-      File : front_distribution_board_Paste_Bot.gbr
+      File : front_distribution_board.GBP
 
     Adding Layer      : Bottom Paste
 
@@ -140,45 +37,28 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Top Overlay
-      File : front_distribution_board_Legend_Top.gbr
+Generating : Bottom Solder
+      File : front_distribution_board.GBS
 
-    Adding Layer      : Top Overlay
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D22
+    D32
+    D33
+    D34
     D35
     D36
     D37
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : front_distribution_board_Paste_Top.gbr
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
-    D16
-    D17
-    D18
-*************************************************************
-
-*************************************************************
 Generating : Top Solder
-      File : front_distribution_board_Soldermask_Top.gbr
+      File : front_distribution_board.GTS
 
     Adding Layer      : Top Solder
 
@@ -188,26 +68,123 @@ Generating : Top Solder
 
 
 Used DCodes :
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
     D29
     D30
     D31
     D32
     D33
     D34
-    D38
-    D39
+    D35
+    D36
+    D37
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : front_distribution_board.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D11
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : front_distribution_board.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : front_distribution_board.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : front_distribution_board.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : front_distribution_board.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
     D40
     D41
     D42
     D43
     D44
-    D45
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : front_distribution_board.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D11
     D46
 *************************************************************
 
 *************************************************************
 Generating : Keep-Out Layer
-      File : front_distribution_board_Keep-out.gbr
+      File : front_distribution_board.GKO
 
     Adding Layer      : Keep-Out Layer
 
@@ -216,119 +193,105 @@ Used DCodes :
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 13
-      File : front_distribution_board_Mechanical_13.gbr
+Generating : Bottom Pad Master
+      File : front_distribution_board.GPB
 
-    Adding Layer      : Mechanical 13
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D35
+    D40
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : front_distribution_board.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : front_distribution_board.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
 *************************************************************
 
 *************************************************************
 Generating : Board
-      File : front_distribution_board_Mechanical_2.gbr
+      File : front_distribution_board.GM2
 
     Adding Layer      : Board
 
 
 Used DCodes :
+    D10
+*************************************************************
+
+*************************************************************
+Generating : Multi-Layer
+      File : front_distribution_board.GML
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D40
+    D41
+    D42
+    D43
+    D44
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : front_distribution_board.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
     D22
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : front_distribution_board_Mechanical_1.gbr
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D22
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 3
-      File : front_distribution_board_Mechanical_3.gbr
-
-    Adding Layer      : Mechanical 3
-
-
-Used DCodes :
-    D22
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 15
-      File : front_distribution_board_Mechanical_15.gbr
-
-    Adding Layer      : Mechanical 15
-
-
-Used DCodes :
-    D35
-    D47
-*************************************************************
-
-*************************************************************
-Generating : Profile
-      File : front_distribution_board_Profile.gbr
-
-
-Used DCodes :
-    D48
-*************************************************************
-
-*************************************************************
-Generating : Non-plated through-hole drill file
-      File : front_distribution_board_NPTH_Drill.gbr
-
-
-Used DCodes :
-    D49
-    D50
-    D51
-    D52
-*************************************************************
-
-*************************************************************
-Generating : Plated through-hole drill file
-      File : front_distribution_board_PTH_Drill.gbr
-
-
-Used DCodes :
-    D53
-    D54
-    D55
-    D56
-    D57
-*************************************************************
-
-*************************************************************
-Generating : Drill Drawing
-      File : front_distribution_board_Drawing_1.gbr
-
-    Adding Drill Pair : Top Layer-Bottom Layer
-
-    Adding Layer      : Drill Drawing
-
-
-Used DCodes :
-    D59
-    D60
-*************************************************************
-
-*************************************************************
-Generating : Drill Guide
-      File : front_distribution_board_Drillmap_1.gbr
-
-    Adding Drill Pair : Top Layer-Bottom Layer
-
-    Adding Layer      : Drill Guide
-
-
-Used DCodes :
-    D59
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
 *************************************************************
 
