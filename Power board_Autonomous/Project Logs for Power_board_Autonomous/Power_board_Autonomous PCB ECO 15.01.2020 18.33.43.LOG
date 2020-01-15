@@ -1,0 +1,4 @@
+Change Component Footprint: Designator=L1 Old Footprint=L_2.4A_12.5*12.5 New Footprint=L_68u 11.5*10
+Change Component Comment : Designator=L1 Old Comment=L_2.4A_12.5*12.5 New Comment=L_68u_SMT 11.5*10
+Change component parameters: Designator = "L1"; Footprint = "L_68u 11.5*10"; UniqueID = "\XJMODODW"
+Change component parameters. Clean all parameters for all variants
