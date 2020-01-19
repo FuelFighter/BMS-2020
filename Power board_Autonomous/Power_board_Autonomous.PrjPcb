@@ -72,7 +72,7 @@ GenerateClassCluster=0
 DocumentUniqueId=TTKJMHQG
 
 [Document3]
-DocumentPath=..\..\Fuel_Fighter_Altium\FF_component_lib.SchLib
+DocumentPath=..\..\Altium_lib_2020\FF_component_lib.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -89,7 +89,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JCCTPVIS
 
 [Document4]
-DocumentPath=..\..\Fuel_Fighter_Altium\FF_pcb_lib.PcbLib
+DocumentPath=..\..\Altium_lib_2020\FF_pcb_lib.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -106,102 +106,106 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous-RectHoles.TXT
+DocumentPath=Project Outputs for Power_board_Autonomous\Footprint Comparison - Power_board_Autonomous.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.1
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous-RectHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.DRR
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.1
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.EXTREP
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBL
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBO
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBP
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBS
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GKO
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM1
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM2
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM3
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM13
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM15
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GML
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GPB
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GML
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GPT
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTL
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTO
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTP
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTS
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.LDP
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.REP
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.RUL
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.REP
 DItemRevisionGUID=
 
 [GeneratedDocument25]
+DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument26]
 DocumentPath=Project Outputs for Power_board_Autonomous\Power_board_Autonomous.TXT
 DItemRevisionGUID=
 
@@ -324,7 +328,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=HPFuelFighter (HP ENVY 4520 series)
+TargetPrinter=Lexmark Universal v2
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
@@ -418,7 +422,7 @@ OutputDefault3=0
 [OutputGroup5]
 Name=Fabrication Outputs
 Description=
-TargetPrinter=HPFuelFighter (HP ENVY 4520 series)
+TargetPrinter=Lexmark Universal v2
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=NC Drill
 OutputName1=NC Drill Files

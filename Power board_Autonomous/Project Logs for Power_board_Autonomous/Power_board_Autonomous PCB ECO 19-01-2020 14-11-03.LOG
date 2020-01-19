@@ -1,0 +1,21 @@
+Added Component: Designator=Put_Front_PDB(XT-60)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Put_LIDAR(XT-60)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=Put_NUC(XT-60)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC2_1 Pin=Put_Front_PDB-1
+Added Pin To Net: NetName=GND Pin=Put_Front_PDB-2
+Added Pin To Net: NetName=NetC2_1 Pin=Put_LIDAR-1
+Added Pin To Net: NetName=GND Pin=Put_LIDAR-2
+Added Pin To Net: NetName=NetC2_1 Pin=Put_NUC-1
+Added Pin To Net: NetName=GND Pin=Put_NUC-2
+Added Member To Class: ClassName=Power_board_Autonomous_schmatics Member=Component Put_Front_PDB XT-60
+Added Member To Class: ClassName=Power_board_Autonomous_schmatics Member=Component Put_LIDAR XT-60
+Added Member To Class: ClassName=Power_board_Autonomous_schmatics Member=Component Put_NUC XT-60
