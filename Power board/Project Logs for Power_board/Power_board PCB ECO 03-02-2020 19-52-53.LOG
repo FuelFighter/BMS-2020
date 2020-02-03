@@ -1,0 +1,3 @@
+Change Physical Footprint: Designator=DCDC1 Old Footprint=ACT4070B_SMD New Footprint=ACT4070B_SMD
+Change Physical Footprint: Designator=J1 Old Footprint=RJ11_Connector New Footprint=RJ11_Connector
+Change Physical Footprint: Designator=J2 Old Footprint=RJ11_Connector New Footprint=RJ11_Connector
