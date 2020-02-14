@@ -1,7 +1,0 @@
-Added Component: Designator=P6(XT-60)
-Add component. Clean all parameters for all variants
-Add component (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
-Add component (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
-Added Pin To Net: NetName=NetC2_2 Pin=P6-1
-Added Pin To Net: NetName=GND Pin=P6-2
-Added Member To Class: ClassName=Power_board_schmatics Member=Component P6 XT-60
