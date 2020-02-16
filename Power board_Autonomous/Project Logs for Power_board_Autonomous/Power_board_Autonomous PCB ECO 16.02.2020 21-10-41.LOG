@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=GND Pin=DCDC1-9
+Added Pin To Net: NetName=NetC5_1 Pin=C5-1
+Added Pin To Net: NetName=NetC5_1 Pin=DCDC1-6
+Added Net: Name=NetC5_1
+Added Room: Name=Power_board_Autonomous_schmatics
