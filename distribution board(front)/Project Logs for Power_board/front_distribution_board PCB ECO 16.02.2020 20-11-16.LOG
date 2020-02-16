@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=Input NewDesignator=P1
+Change Component Designator: OldDesignator=Light NewDesignator=P2
+Change Component Designator: OldDesignator=Wipper NewDesignator=P3
+Added Pin To Net: NetName=NetC5_1 Pin=C5-1
+Added Pin To Net: NetName=NetC5_1 Pin=DCDC1-6
+Added Net: Name=NetC5_1
+Added Pin To Net: NetName=NetC10_1 Pin=C10-1
+Added Pin To Net: NetName=NetC10_1 Pin=DCDC2-6
+Added Net: Name=NetC10_1
+Added Member To Class: ClassName=front_distribution_board Member=Component C2 C_EL_SMT_Ø6.3

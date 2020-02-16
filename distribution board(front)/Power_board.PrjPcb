@@ -71,103 +71,141 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UBEAEYQM
 
+[Document3]
+DocumentPath=..\..\FF_Altium_lib_2020\FF_component_lib.SchLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JCCTPVIS
+
+[Document4]
+DocumentPath=..\..\FF_Altium_lib_2020\FF_pcb_lib.PcbLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=FYUKLTYG
+
 [GeneratedDocument1]
-DocumentPath=Project Outputs for Power_board\front_distribution_board-RectHoles.TXT
+DocumentPath=Project Outputs for Power_board\Design Rule Check - front_distribution_board.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.1
+DocumentPath=Project Outputs for Power_board\front_distribution_board-RectHoles.TXT
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.DRR
+DocumentPath=Project Outputs for Power_board\front_distribution_board.1
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.EXTREP
+DocumentPath=Project Outputs for Power_board\front_distribution_board.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GBL
+DocumentPath=Project Outputs for Power_board\front_distribution_board.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GBO
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GBP
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GBS
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GKO
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GM1
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GM2
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GM3
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GM2
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GM13
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GM15
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GML
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GPB
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GML
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GPT
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GTL
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GTO
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GTP
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.GTS
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.LDP
+DocumentPath=Project Outputs for Power_board\front_distribution_board.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.REP
+DocumentPath=Project Outputs for Power_board\front_distribution_board.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Power_board\front_distribution_board.RUL
+DocumentPath=Project Outputs for Power_board\front_distribution_board.REP
 DItemRevisionGUID=
 
 [GeneratedDocument25]
+DocumentPath=Project Outputs for Power_board\front_distribution_board.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument26]
 DocumentPath=Project Outputs for Power_board\front_distribution_board.TXT
 DItemRevisionGUID=
 
@@ -290,7 +328,7 @@ OutputDefault20=0
 [OutputGroup2]
 Name=Simulator Outputs
 Description=
-TargetPrinter=Lexmark Universal v2
+TargetPrinter=Solid Edge Velocity PS Printer 2.0
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 
 [OutputGroup3]
@@ -358,6 +396,12 @@ OutputDocumentPath10=
 OutputVariantName10=
 OutputDefault10=0
 PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+OutputType11=PDF3D MBA
+OutputName11=PDF3D MBA
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
 
 [OutputGroup4]
 Name=Assembly Outputs
@@ -384,7 +428,7 @@ OutputDefault3=0
 [OutputGroup5]
 Name=Fabrication Outputs
 Description=
-TargetPrinter=Lexmark Universal v2
+TargetPrinter=Solid Edge Velocity PS Printer 2.0
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputType1=CompositeDrill
 OutputName1=Composite Drill Drawing
@@ -834,7 +878,7 @@ Type32=1
 Type33=1
 Type34=1
 Type35=1
-Type36=1
+Type36=0
 Type37=1
 Type38=1
 Type39=1
@@ -916,6 +960,8 @@ Type114=1
 Type115=1
 Type116=1
 Type117=1
+Type118=1
+Type119=1
 
 [Difference Levels]
 Type1=1
@@ -984,6 +1030,8 @@ Type63=1
 Type64=1
 Type65=1
 Type66=1
+Type67=1
+Type68=1
 
 [Electrical Rules Check]
 Type1=1
@@ -992,33 +1040,33 @@ Type3=2
 Type4=1
 Type5=2
 Type6=2
-Type7=1
+Type7=0
 Type8=1
 Type9=1
 Type10=1
 Type11=2
-Type12=2
-Type13=2
+Type12=0
+Type13=0
 Type14=1
 Type15=1
 Type16=1
 Type17=1
 Type18=1
 Type19=1
-Type20=1
-Type21=1
-Type22=1
-Type23=1
+Type20=0
+Type21=0
+Type22=0
+Type23=0
 Type24=1
 Type25=2
-Type26=2
+Type26=0
 Type27=2
 Type28=1
 Type29=1
 Type30=1
 Type31=1
 Type32=2
-Type33=2
+Type33=0
 Type34=2
 Type35=1
 Type36=2
@@ -1029,15 +1077,15 @@ Type40=2
 Type41=0
 Type42=2
 Type43=1
-Type44=1
-Type45=2
-Type46=1
-Type47=2
-Type48=2
-Type49=1
+Type44=0
+Type45=0
+Type46=0
+Type47=0
+Type48=0
+Type49=0
 Type50=2
-Type51=1
-Type52=1
+Type51=0
+Type52=0
 Type53=1
 Type54=1
 Type55=1
@@ -1045,10 +1093,10 @@ Type56=2
 Type57=1
 Type58=1
 Type59=2
-Type60=1
-Type61=2
-Type62=2
-Type63=1
+Type60=0
+Type61=0
+Type62=0
+Type63=0
 Type64=0
 Type65=2
 Type66=3
@@ -1086,7 +1134,7 @@ Type97=2
 Type98=0
 Type99=1
 Type100=2
-Type101=1
+Type101=0
 Type102=2
 Type103=2
 Type104=1
@@ -1131,6 +1179,7 @@ L17=WNNNNNNNWNNNWWWWN
 [Annotate]
 SortOrder=3
 SortLocation=0
+ReplaceSubparts=0
 MatchParameter1=Comment
 MatchStrictly1=1
 MatchParameter2=Library Reference
@@ -1151,6 +1200,7 @@ NetClassSeparateForBusSections=0
 [LibraryUpdateOptions]
 SelectedOnly=0
 UpdateVariants=1
+UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
 ComponentLibraryIdentifier0=FF_component_lib.SchLib
@@ -1162,52 +1212,52 @@ ComponentLibIdentifierKind1=Library Name And Type
 ComponentLibraryIdentifier1=FF_component_lib.SchLib
 ComponentDesignItemID1=C_EL_SMT_Ø6.3
 ComponentSymbolReference1=C_EL_SMT_Ø6.3
-ComponentUpdate1=0
+ComponentUpdate1=1
 ComponentIsDeviceSheet1=0
 ComponentLibIdentifierKind2=Library Name And Type
 ComponentLibraryIdentifier2=FF_component_lib.SchLib
 ComponentDesignItemID2=C_SMD_0805
 ComponentSymbolReference2=C_SMD_0805
-ComponentUpdate2=0
+ComponentUpdate2=1
 ComponentIsDeviceSheet2=0
 ComponentLibIdentifierKind3=Library Name And Type
 ComponentLibraryIdentifier3=FF_component_lib.SchLib
 ComponentDesignItemID3=Fuse-holder-3A
 ComponentSymbolReference3=Fuse-holder-3A
-ComponentUpdate3=0
+ComponentUpdate3=1
 ComponentIsDeviceSheet3=0
 ComponentLibIdentifierKind4=Library Name And Type
 ComponentLibraryIdentifier4=FF_component_lib.SchLib
-ComponentDesignItemID4=L_DR73_SMD
-ComponentSymbolReference4=L_DR73_SMD
-ComponentUpdate4=0
+ComponentDesignItemID4=L_2.4A_12.5*12.5
+ComponentSymbolReference4=L_2.4A_12.5*12.5
+ComponentUpdate4=1
 ComponentIsDeviceSheet4=0
 ComponentLibIdentifierKind5=Library Name And Type
 ComponentLibraryIdentifier5=FF_component_lib.SchLib
 ComponentDesignItemID5=R_SMD_0805
 ComponentSymbolReference5=R_SMD_0805
-ComponentUpdate5=0
+ComponentUpdate5=1
 ComponentIsDeviceSheet5=0
 ComponentLibIdentifierKind6=Library Name And Type
 ComponentLibraryIdentifier6=FF_component_lib.SchLib
 ComponentDesignItemID6=XT-60
 ComponentSymbolReference6=XT-60
-ComponentUpdate6=0
+ComponentUpdate6=1
 ComponentIsDeviceSheet6=0
 ComponentLibIdentifierKind7=Library Name And Type
 ComponentLibraryIdentifier7=Miscellaneous Devices.IntLib
 ComponentDesignItemID7=Diode 10TQ035
 ComponentSymbolReference7=Diode 10TQ035
-ComponentUpdate7=0
+ComponentUpdate7=1
 ComponentIsDeviceSheet7=0
-FullReplace=1
+FullReplace=0
 UpdateDesignatorLock=1
 UpdatePartIDLock=1
 PreserveParameterLocations=1
 PreserveParameterVisibility=1
 DoGraphics=1
-DoParameters=1
-DoModels=1
+DoParameters=0
+DoModels=0
 AddParameters=0
 RemoveParameters=0
 AddModels=1
@@ -1254,7 +1304,7 @@ ParameterUpdate18=1
 ParameterName19=Supplier Part Number 1
 ParameterUpdate19=1
 ParameterName20=Value
-ParameterUpdate20=1
+ParameterUpdate20=0
 ModelTypeGroup0=PCBLIB
 ModelTypeUpdate0=1
 ModelType0=PCBLIB
@@ -1270,7 +1320,7 @@ ModelType3=PCBLIB
 ModelName3=fuse_holder_3A
 ModelUpdate3=1
 ModelType4=PCBLIB
-ModelName4=L_DR73_SMD
+ModelName4=L_2.4A_12.5*12.5
 ModelUpdate4=1
 ModelType5=PCBLIB
 ModelName5=R_SMD_0805_pcb
@@ -1290,6 +1340,7 @@ ModelUpdate8=1
 [DatabaseUpdateOptions]
 SelectedOnly=0
 UpdateVariants=1
+UpdateToLatestRevision=1
 PartTypes=0
 ComponentLibIdentifierKind0=Library Name And Type
 ComponentLibraryIdentifier0=FF_component_lib.SchLib

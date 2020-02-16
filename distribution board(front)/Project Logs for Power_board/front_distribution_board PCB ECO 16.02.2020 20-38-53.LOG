@@ -1,0 +1,18 @@
+Added Component: Designator=DCDC1(ACT4070B_SMD)
+Added Component: Designator=DCDC2(ACT4070B_SMD)
+Added Pin To Net: NetName=NetC1_1 Pin=DCDC1-1
+Added Pin To Net: NetName=NetC2_2 Pin=DCDC1-2
+Added Pin To Net: NetName=NetC1_2 Pin=DCDC1-3
+Added Pin To Net: NetName=GND Pin=DCDC1-4
+Added Pin To Net: NetName=GND Pin=DCDC1-4
+Added Pin To Net: NetName=NetC3_1 Pin=DCDC1-5
+Added Pin To Net: NetName=NetC5_1 Pin=DCDC1-6
+Added Pin To Net: NetName=NetC6_1 Pin=DCDC2-1
+Added Pin To Net: NetName=NetC2_2 Pin=DCDC2-2
+Added Pin To Net: NetName=NetC6_2 Pin=DCDC2-3
+Added Pin To Net: NetName=GND Pin=DCDC2-4
+Added Pin To Net: NetName=GND Pin=DCDC2-4
+Added Pin To Net: NetName=NetC8_1 Pin=DCDC2-5
+Added Pin To Net: NetName=NetC10_1 Pin=DCDC2-6
+Added Member To Class: ClassName=front_distribution_board Member=Component DCDC1 DCDC
+Added Member To Class: ClassName=front_distribution_board Member=Component DCDC2 DCDC
