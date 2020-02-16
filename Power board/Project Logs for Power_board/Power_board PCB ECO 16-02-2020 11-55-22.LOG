@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=NetC2_1 Pin=P5-1
+Removed Pin From Net: NetName=GND Pin=P5-2
+Removed Member From Class: ClassName=Power_board_schmatics Member=P5
+Added Member To Class: ClassName=Power_board_schmatics Member=Component L2 L_7.5A_11.5*10mm
