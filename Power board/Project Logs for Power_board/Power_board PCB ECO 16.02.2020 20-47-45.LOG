@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=NetC5_1 Pin=C5-1
+Removed Pin From Net: NetName=NetC5_1 Pin=DCDC1-6
+Removed Pin From Net: NetName=NetC9_2 Pin=F2-1
+Removed Pin From Net: NetName=NetJ1_2 Pin=R8-1
+Change Component Description : Designator=DCDC1 Old Description=6v to 30v input range 
+3A output current
+up to 12v output New Description=6v to 30v input range 
+3A output current
+up to 12v output
+https://active-semi.com/wp-content/uploads/ACT4070B_Datasheet.pdf
+Change component parameters: Designator = "DCDC1" ("DCDC1"); Footprint = "ACT4070B_SMD"; UniqueID = "\YYTVHQFG" ("\YYTVHQFG")
+Change component parameters: Designator = "P3" ("P3"); Footprint = "PIN_HEADER_M_1x3"; UniqueID = "\XSOZRAQH" ("\XSOZRAQH")
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = ""; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC5_1 Pin=P2-1
+Change Net Name : Old Net Name=NetC5_1 New Net Name=NetF2_1
