@@ -10,4 +10,4 @@ From  : Project [Power_board.PrjPcb]
 Files Generated   : 4
 Documents Printed : 0
 
-Finished Output Generation At 00.07.04 On 15.01.2020
+Finished Output Generation At 20:34:44 On 17.02.2020

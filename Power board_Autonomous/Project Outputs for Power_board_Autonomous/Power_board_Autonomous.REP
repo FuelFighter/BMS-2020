@@ -2,38 +2,29 @@
 FileName = Power_board_Autonomous.GBR
 AutoAperture = True
 *************************************************************
-Generating : Mechanical 3
-      File : Power_board_Autonomous.GM3
+Generating : Bottom Overlay
+      File : Power_board_Autonomous.GBO
 
-    Adding Layer      : Mechanical 3
-
-    Adding Layer      : Mechanical 1
+    Adding Layer      : Bottom Overlay
 
 
 Used DCodes :
-    D12
 *************************************************************
 
 *************************************************************
-Generating : Keep-Out Layer
-      File : Power_board_Autonomous.GKO
+Generating : Mechanical 13
+      File : Power_board_Autonomous.GM13
 
-    Adding Layer      : Keep-Out Layer
-
-    Adding Layer      : Mechanical 1
+    Adding Layer      : Mechanical 13
 
 
 Used DCodes :
-    D12
+    D14
 *************************************************************
 
 *************************************************************
-Generating : Bottom Solder
-      File : Power_board_Autonomous.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Mechanical 1
+Generating : Bottom Pad Master
+      File : Power_board_Autonomous.GPB
 
     Adding Layer      : Bottom Layer
 
@@ -41,14 +32,12 @@ Generating : Bottom Solder
 
 
 Used DCodes :
-    D12
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
 *************************************************************
 
 *************************************************************
@@ -57,17 +46,71 @@ Generating : Multi-Layer
 
     Adding Layer      : Multi-Layer
 
-    Adding Layer      : Mechanical 1
-
 
 Used DCodes :
-    D12
-    D50
     D51
     D52
     D53
     D54
     D55
+    D56
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : Power_board_Autonomous.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : Power_board_Autonomous.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : Power_board_Autonomous.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D14
+    D58
 *************************************************************
 
 *************************************************************
@@ -76,15 +119,12 @@ Generating : Top Solder
 
     Adding Layer      : Top Solder
 
-    Adding Layer      : Mechanical 1
-
     Adding Layer      : Top Layer
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D12
     D27
     D28
     D29
@@ -102,31 +142,53 @@ Used DCodes :
     D41
     D42
     D43
-    D44
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 15
-      File : Power_board_Autonomous.GM15
+Generating : Dielectric 1
+      File : Power_board_Autonomous.1
 
-    Adding Layer      : Mechanical 15
+    Adding Layer      : Dielectric 1
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : Power_board_Autonomous.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : Power_board_Autonomous.GM1
 
     Adding Layer      : Mechanical 1
 
 
 Used DCodes :
     D12
-    D14
-    D57
 *************************************************************
 
 *************************************************************
-Generating : Top Paste
-      File : Power_board_Autonomous.GTP
+Generating : Mechanical 3
+      File : Power_board_Autonomous.GM3
 
-    Adding Layer      : Top Paste
+    Adding Layer      : Mechanical 3
 
-    Adding Layer      : Mechanical 1
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Top Layer
+      File : Power_board_Autonomous.GTL
 
     Adding Layer      : Top Layer
 
@@ -146,6 +208,66 @@ Used DCodes :
     D24
     D25
     D26
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : Power_board_Autonomous.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+*************************************************************
+
+*************************************************************
+Generating : Board
+      File : Power_board_Autonomous.GM2
+
+    Adding Layer      : Board
+
+
+Used DCodes :
+    D12
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : Power_board_Autonomous.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D44
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
 *************************************************************
 
 *************************************************************
@@ -153,8 +275,6 @@ Generating : Top Overlay
       File : Power_board_Autonomous.GTO
 
     Adding Layer      : Top Overlay
-
-    Adding Layer      : Mechanical 1
 
 
 Used DCodes :
@@ -174,11 +294,8 @@ Generating : Top Pad Master
 
     Adding Layer      : Multi-Layer
 
-    Adding Layer      : Mechanical 1
-
 
 Used DCodes :
-    D12
     D16
     D17
     D18
@@ -190,171 +307,6 @@ Used DCodes :
     D24
     D25
     D26
-    D50
-    D51
-    D52
-    D53
-    D54
-    D55
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : Power_board_Autonomous.GM1
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : Power_board_Autonomous.GBO
-
-    Adding Layer      : Bottom Overlay
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Bottom Pad Master
-      File : Power_board_Autonomous.GPB
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-    D50
-    D51
-    D52
-    D53
-    D54
-    D55
-*************************************************************
-
-*************************************************************
-Generating : Dielectric 1
-      File : Power_board_Autonomous.1
-
-    Adding Layer      : Dielectric 1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Board
-      File : Power_board_Autonomous.GM2
-
-    Adding Layer      : Board
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Bottom Paste
-      File : Power_board_Autonomous.GBP
-
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : Power_board_Autonomous.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D45
-    D50
-    D51
-    D52
-    D53
-    D54
-    D55
-    D56
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 13
-      File : Power_board_Autonomous.GM13
-
-    Adding Layer      : Mechanical 13
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D12
-    D14
-*************************************************************
-
-*************************************************************
-Generating : Top Layer
-      File : Power_board_Autonomous.GTL
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Mechanical 1
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D12
-    D16
-    D17
-    D18
-    D19
-    D20
-    D21
-    D22
-    D23
-    D24
-    D25
-    D26
-    D45
-    D46
-    D47
-    D48
-    D49
-    D50
     D51
     D52
     D53
