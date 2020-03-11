@@ -1,0 +1,3 @@
+Added Pin To Net: NetName=NetDCDC1_5 Pin=DCDC1-5
+Added Pin To Net: NetName=NetDCDC1_5 Pin=R1-2
+Added Net: Name=NetDCDC1_5
